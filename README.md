@@ -1,36 +1,173 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Super Shield - Heat Free Sun
+
+A modern, animated website for Super Shield automotive window films, vinyl wraps, and paint protection film services.
+
+## Features
+
+- 🎨 Modern dark theme with animated UI
+- 📱 Fully responsive design
+- ⚡ Built with Next.js 16, React 19, and TypeScript
+- 🎭 Smooth animations using Framer Motion
+- 🎯 Multi-page navigation (Home, About, Products, Technology, Warranty, Gallery, Contact)
+- 🚀 Ready for Vercel deployment
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Deployment**: Vercel
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deployment to Vercel
 
-## Learn More
+### Option 1: Deploy via Vercel CLI
 
-To learn more about Next.js, take a look at the following resources:
+1. Install Vercel CLI:
+```bash
+npm i -g vercel
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Deploy:
+```bash
+vercel
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Option 2: Deploy via GitHub
 
-## Deploy on Vercel
+1. Push your code to a GitHub repository
+2. Go to [vercel.com](https://vercel.com)
+3. Click "New Project"
+4. Import your GitHub repository
+5. Vercel will automatically detect Next.js and deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Option 3: Deploy via Vercel Dashboard
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Go to [vercel.com](https://vercel.com)
+2. Click "New Project"
+3. Connect your Git repository or upload the project folder
+4. Vercel will automatically configure and deploy
+
+## Project Structure
+
+```
+super-shield/
+├── app/
+│   ├── components/          # Reusable UI components
+│   │   ├── Navigation.tsx
+│   │   ├── BackgroundGlow.tsx
+│   │   ├── CarImage.tsx
+│   │   ├── Logo.tsx
+│   │   ├── Pill.tsx
+│   │   ├── SectionTitle.tsx
+│   │   ├── Stat.tsx
+│   │   ├── ProductCard.tsx
+│   │   └── Metric.tsx
+│   ├── constants/           # Shared constants and data
+│   │   └── index.ts         # Products, nav links, contact info, etc.
+│   ├── types/               # TypeScript type definitions
+│   │   └── index.ts         # Shared interfaces and types
+│   ├── lib/                 # Utility functions
+│   │   └── utils.ts         # Helper functions
+│   ├── about/               # About page
+│   ├── products/            # Products page
+│   ├── technology/          # Technology page
+│   ├── warranty/            # Warranty page
+│   ├── gallery/             # Gallery page
+│   ├── contact/             # Contact page
+│   ├── layout.tsx           # Root layout
+│   ├── page.tsx             # Homepage
+│   └── globals.css          # Global styles
+├── public/                  # Static assets
+│   ├── images/              # Image assets
+│   │   ├── cars/            # Car images
+│   │   └── products/        # Product images
+│   └── logo/                # Logo files
+├── next.config.ts           # Next.js configuration
+├── tsconfig.json            # TypeScript configuration
+├── eslint.config.mjs        # ESLint configuration
+├── postcss.config.mjs       # PostCSS configuration
+├── package.json             # Dependencies
+└── README.md                # This file
+```
+
+## Customization
+
+### Update Contact Information
+
+Edit `app/constants/index.ts` to update:
+- Contact address (`CONTACT_INFO`)
+- Company information (`COMPANY_INFO`)
+- Navigation links (`NAV_LINKS`)
+
+### Update Products
+
+Edit `app/constants/index.ts` to modify:
+- Product list (`PRODUCTS`)
+- Product specifications, descriptions, and highlights
+
+### Add Gallery Images
+
+1. Add images to `public/images/cars/` or `public/images/products/`
+2. Follow the naming conventions in the README files in those directories
+
+### Update Brand Name
+
+The brand name "SUPER SHIELD" is centralized in:
+- `app/constants/index.ts` (`COMPANY_INFO`)
+- `app/layout.tsx` (metadata)
+
+### Code Organization
+
+- **Types**: All TypeScript interfaces are in `app/types/index.ts`
+- **Constants**: All shared data is in `app/constants/index.ts`
+- **Utilities**: Helper functions are in `app/lib/utils.ts`
+- **Components**: Reusable UI components are in `app/components/`
+
+## Environment Variables
+
+No environment variables are required for basic deployment. 
+
+For future enhancements, you may want to add:
+- Email service API keys (for contact form)
+- WhatsApp API credentials (for WhatsApp integration)
+- Analytics IDs (Google Analytics, etc.)
+
+See `.env.example` for reference (create `.env.local` for local development).
+
+## Build
+
+```bash
+npm run build
+```
+
+## Production
+
+```bash
+npm start
+```
+
+## License
+
+© 2024 Super Shield. All rights reserved.
