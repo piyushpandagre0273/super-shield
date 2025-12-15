@@ -42,32 +42,29 @@ npm run dev
 
 ## Deployment to Vercel
 
-### Option 1: Deploy via Vercel CLI
+📖 **Detailed Guide**: See [VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md) for step-by-step instructions.
 
-1. Install Vercel CLI:
+### Quick Start (Recommended)
+
+1. **Go to [vercel.com](https://vercel.com)** and sign in with GitHub
+2. **Click "Add New..." → "Project"**
+3. **Import your repository**: Select `raghavsukhadia/super-shield`
+4. **Click "Deploy"** - Vercel auto-detects Next.js settings
+5. **Done!** Your site will be live in 2-3 minutes
+
+### Alternative: Vercel CLI
+
 ```bash
 npm i -g vercel
+vercel login
+vercel --prod
 ```
 
-2. Deploy:
-```bash
-vercel
-```
+### Automatic Deployments
 
-### Option 2: Deploy via GitHub
-
-1. Push your code to a GitHub repository
-2. Go to [vercel.com](https://vercel.com)
-3. Click "New Project"
-4. Import your GitHub repository
-5. Vercel will automatically detect Next.js and deploy
-
-### Option 3: Deploy via Vercel Dashboard
-
-1. Go to [vercel.com](https://vercel.com)
-2. Click "New Project"
-3. Connect your Git repository or upload the project folder
-4. Vercel will automatically configure and deploy
+- ✅ Every push to `main` branch = Automatic production deployment
+- ✅ Pull requests = Preview deployments for testing
+- ✅ Zero configuration needed!
 
 ## Project Structure
 
