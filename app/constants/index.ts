@@ -26,7 +26,7 @@ export const PRODUCTS: Product[] = [
     description:
       'Sputtering technology integrates precious metals (gold & silver) in multi-layers for strong heat reflection & absorption—cooler cabin, premium clarity.',
     highlights: ['High heat comfort', 'Premium clarity', 'Luxury look'],
-    image: '/images/products/product-us70.jpg',
+    image: '/images/products/ultra-super-70-us70-1.jpg',
   },
   {
     name: 'Super 70 (S70)',
@@ -72,7 +72,7 @@ export const PRODUCTS: Product[] = [
 export const CONTACT_INFO = {
   address: 'Mayfair Apartment, Near All India Reporter, Dhantoli, Nagpur, Maharashtra 440012',
   city: 'Nagpur',
-  phone: '095225 71575',
+  phone: '9370665551',
   tags: ['Nagpur', 'Auto Films', 'Installations'],
 };
 

@@ -24,7 +24,7 @@ const stagger = {
 export default function GalleryPage() {
   // Car images - add your images to public/images/cars/ folder
   const galleryItems = [
-    { src: "/images/cars/hero-car-1.jpg", alt: "Red sports car with window film" },
+    { src: "/images/cars/desert-red-supercar.jpg", alt: "Red supercar drifting on desert sand" },
     { src: "/images/cars/car-2.jpg", alt: "Black Porsche Panamera with premium tint" },
     { src: "/images/cars/car-3.jpg", alt: "Lamborghini Aventador with Super Shield protection" },
     { src: "/images/cars/car-4.jpg", alt: "Red sports car on coastal road" },

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Pill from "./Pill";
 import { Product } from "../types";
+import { useState } from "react";
 
 export default function ProductCard({
   p,
@@ -14,6 +15,7 @@ export default function ProductCard({
   selected: boolean;
   onClick: () => void;
 }) {
+  const [imgSrc, setImgSrc] = useState<string>(p.image || "/images/cars/car-4.jpg");
   return (
     <motion.div
       initial={{ opacity: 0, y: 50, scale: 0.9 }}
@@ -50,26 +52,21 @@ export default function ProductCard({
 
         {/* Product Image - Large and Prominent */}
         <div className="relative h-56 w-full overflow-hidden">
-          {p.image ? (
-            <Image
-              src={p.image}
-              alt={p.name}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-125"
-              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            />
-          ) : (
-            <div className="flex h-full items-center justify-center bg-gradient-to-br from-white/10 via-white/5 to-black/20">
-              <motion.div
-                animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="text-center"
-              >
-                <div className="text-6xl mb-2">🚗</div>
-                <div className="text-xs text-white/50">Product Image</div>
-              </motion.div>
-            </div>
-          )}
+          <Image
+            src={imgSrc}
+            alt={p.name}
+            fill
+            priority
+            loading="eager"
+            className="object-cover transition-transform duration-700 group-hover:scale-125"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            onError={() => {
+              // Fallback to a known car image if product image is missing
+              if (imgSrc !== "/images/cars/car-4.jpg") {
+                setImgSrc("/images/cars/car-4.jpg");
+              }
+            }}
+          />
           
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />

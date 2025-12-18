@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import Navigation from "../components/Navigation";
 import BackgroundGlow from "../components/BackgroundGlow";
 import SectionTitle from "../components/SectionTitle";
@@ -67,6 +68,23 @@ export default function WarrantyPage() {
                 of the issue. Our team will review and process your claim promptly.
               </p>
             </div>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeUp}
+            className="mx-auto mt-10 max-w-3xl text-center"
+          >
+            <Link
+              href="http://c.supershield.co.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block rounded-2xl bg-white px-8 py-4 text-base font-semibold text-black transition hover:scale-[1.02] active:scale-[0.98]"
+            >
+              Check Warranty
+            </Link>
           </motion.div>
         </div>
       </section>
