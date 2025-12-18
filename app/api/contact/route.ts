@@ -1,5 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { ContactFormData } from '@/types';
+
+interface ContactFormData {
+  name: string;
+  phone: string;
+  vehicle: string;
+  product: string;
+  message?: string;
+}
 
 export async function POST(request: NextRequest) {
   try {

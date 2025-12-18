@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import Navigation from "../components/Navigation";
 import BackgroundGlow from "../components/BackgroundGlow";
@@ -21,6 +21,14 @@ const fadeUp = {
 export default function ContactPage() {
   const [formLoading, setFormLoading] = React.useState(false);
   const [formMessage, setFormMessage] = React.useState<{ type: string; text: string }>({ type: '', text: '' });
+
+  useEffect(() => {
+    document.title = "Contact Us - Get a Quote | Super Shield";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', "Contact Super Shield for premium window film installation in Nagpur. Phone: 9370665551. Located at Mayfair Apartment, Dhantoli, Nagpur, Maharashtra.");
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#05060a] text-white">

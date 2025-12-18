@@ -12,6 +12,15 @@ const nextConfig: NextConfig = {
   },
   // Enable React strict mode for better performance
   reactStrictMode: true,
+  
+  // Performance optimizations
+  compress: true,
+  poweredByHeader: false,
+  
+  // Enable experimental features for better performance
+  experimental: {
+    optimizePackageImports: ['framer-motion'],
+  },
 };
 
 export default nextConfig;

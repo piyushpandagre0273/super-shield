@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import Navigation from "../components/Navigation";
 import BackgroundGlow from "../components/BackgroundGlow";
 import SectionTitle from "../components/SectionTitle";
@@ -21,6 +22,14 @@ const stagger = {
 };
 
 export default function AboutPage() {
+  useEffect(() => {
+    document.title = "About Us - 20+ Years Excellence | Super Shield";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', "Learn about Super Shield's 20+ years of expertise in automotive window films, vinyl wrap, and paint protection film. Premium craft, comfort, and personalized guidance in Nagpur.");
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#05060a] text-white">
       <BackgroundGlow />

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Navigation from "../components/Navigation";
@@ -92,6 +92,14 @@ export default function ProductsPage() {
   const [showDetails, setShowDetails] = useState(false);
 
   const current = PRODUCTS.find((p) => p.name === activeProduct) || PRODUCTS[0];
+
+  useEffect(() => {
+    document.title = "Premium Window Films & Products | Super Shield";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', "Explore our range of premium window films: Ultra Super 70 (US70), Super 70 (S70), Nano Ceramic (IR70), and Sunroof Series. Up to 98% IR rejection, 99% UV block.");
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#05060a] text-white">

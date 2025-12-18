@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import Image from "next/image";
 import Navigation from "../components/Navigation";
 import CarImage from "../components/CarImage";
@@ -22,6 +23,14 @@ const stagger = {
 };
 
 export default function GalleryPage() {
+  useEffect(() => {
+    document.title = "Gallery - Our Work | Super Shield";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', "Browse our portfolio of window film installations, vinyl wraps, and paint protection film applications. Premium automotive customization in Nagpur.");
+    }
+  }, []);
+
   // Car images - add your images to public/images/cars/ folder
   const galleryItems = [
     { src: "/images/cars/desert-red-supercar.jpg", alt: "Red supercar drifting on desert sand" },

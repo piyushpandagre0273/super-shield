@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import Navigation from "../components/Navigation";
 import BackgroundGlow from "../components/BackgroundGlow";
 import SectionTitle from "../components/SectionTitle";
@@ -22,6 +23,14 @@ const stagger = {
 };
 
 export default function TechnologyPage() {
+  useEffect(() => {
+    document.title = "Technology - Performance Metrics | Super Shield";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', "Understand window film technology: VLT, UVR, IRR, and TSER metrics. Professional performance measurements for clarity, heat rejection, and UV blocking.");
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#05060a] text-white">
       <BackgroundGlow />

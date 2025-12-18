@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import Link from "next/link";
 import Navigation from "../components/Navigation";
 import BackgroundGlow from "../components/BackgroundGlow";
@@ -17,6 +18,14 @@ const fadeUp = {
 };
 
 export default function WarrantyPage() {
+  useEffect(() => {
+    document.title = "60 Months Warranty | Super Shield";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', "60 months warranty on all Super Shield window films. Coverage includes bubbles, adhesive failures, discoloration, and performance protection.");
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#05060a] text-white">
       <BackgroundGlow />
